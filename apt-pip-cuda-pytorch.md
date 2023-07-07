@@ -1,4 +1,3 @@
-
 # Ubuntu 22.04 LTS <br> Installation de paquets système + pip sur machine offline
 
 Ce guide décrit les méthodes d'installation de paquets sur machine x86_x64 Ubuntu 22.04 non connectée à internet [`cold`] :
@@ -165,11 +164,13 @@ Chaque version de CUDA nécessite une version minimale de driver nvidia mais fon
 	cold: $ sudo init 3
 	```
 - Se logger à nouveau (si besoin vous pouvez ouvrir un nouveau tty à l'aide de `ctrl`+`alt`+`F<n>`).
+- Il est recommandé de désinstaller les éventuels drivers nvidia :
+	```bash
+	cold: $ sudo apt --purge remove "*nvidia*"
  - Installer cuda et son driver :
 	```bash
 	cold: $ sudo sh /cuda_12.2.0_535.54.03_linux.run
 	```
-	>  Il est recommandé de désinstaller avant les éventuels drivers nvidia ou la précédente installation cuda.
 	>  Après redémarrage, vous pouvez vérifier l'installation avec la commande ```cold: $ nvidia-smi``` qui devra indiquer le driver nvidia ainsi que la version de cuda installée.
 	
 
@@ -198,4 +199,3 @@ Chaque version de CUDA nécessite une version minimale de driver nvidia mais fon
 	```
 	> Vous pouvez ensuite [vérifier votre installation](https://pytorch.org/get-started/locally/#windows-verification).
 	 
-
